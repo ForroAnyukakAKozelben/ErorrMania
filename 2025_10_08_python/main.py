@@ -8,7 +8,6 @@ def calculate_total(cart):
     total = sum(cart.values())
     return total
 
-
 def apply_discount(total_price, discount):
     return total_price - (total_price * (discount/100))
 
