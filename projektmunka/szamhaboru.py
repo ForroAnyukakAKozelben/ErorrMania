@@ -1,13 +1,12 @@
 import random
 
-bool = True
-idk = True
+game = True
 wins = 0
 loose = 0
 tie = 0
 print("Üdv a Számháború játékban!")
 
-while bool:
+while game:
     
     x = random.randint(1,6)
     player = 0
