@@ -6,7 +6,7 @@ a lista tartalmát írja ki a képernyőre! A felhasználónak legyen lehetősé
 import random
 
 def DeleteNumb(numbers, delete):
-    return [x*x for x in numbers if x != delete]
+    return [x for x in numbers if x != delete]
 
 numbers = [] 
 for i in range(10): 
