@@ -13,6 +13,6 @@ while True:
     except ValueError as e:
         print(e)
     print(f"A jelenlegi lista így néz ki: {list}")
-    if input("Folytatnád? i/n").lower() == "n":
+    if input("Folytatnád? i/n ").lower() == "n":
         print("Köszönjük hogy ezt a programot használtad, bye!")
         break
