@@ -63,12 +63,11 @@ else:
 
 
 while True:
-    print("Témák: könnyű, közepes, nehéz, vegyes, irodalom")
-    choice = str(input("Rendben van, eljött az ideje hogy kiválassza a témát: "))
-    choice = choice.lower()
-    
-    
+    guess = []
     while rnd_while:
+        print("Témák: könnyű, közepes, nehéz, vegyes, irodalom")
+        choice = str(input("Rendben van, eljött az ideje hogy kiválassza a témát: "))
+        choice = choice.lower()
         if choice == "könnyű" or choice == "konnyu":
             word = easy()
             rnd_while = False
@@ -87,4 +86,18 @@ while True:
         else: 
             print("Kérlek ne jól írd be! ")
     
-
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
+    
+    for x in word:
+        if x == " ":
+            guess += " "
+        elif x == "-":
+            guess += "-"
+        elif x == ":":
+            guess += ":"
+        else:
+            guess.append("_")
+    
