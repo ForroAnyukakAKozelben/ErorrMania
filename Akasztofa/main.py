@@ -80,7 +80,7 @@ def guessing_letter(word, guess):
 
 
         #Milán
-        user_guess = input("Tippelj egy betűt vagy a teljes szót: ").lower()
+        user_guess = input("Tippelj egy betűt: ").lower()
 
         if user_guess in used_letters:
             print("Erre már tippeltél!")
@@ -122,13 +122,14 @@ def guessing_letter(word, guess):
     input()
     
 
-
-# Functionok a szó kiválasztásához, 
 def load_words(filename):
     path = os.path.join(BASE_DIR, filename) #Base directory meghatározása, így bármilyen eszközön megtalálja a fájlokat
     with open(path, "r", encoding="utf-8") as f:
         return f.read().splitlines()
 
+
+
+# Functionok a szó kiválasztásához, 
 def easy():
     return random.choice(load_words("konnyu.txt"))
 
