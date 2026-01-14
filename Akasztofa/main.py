@@ -3,9 +3,6 @@ import os
 import time
 import platform
 
-import random
-import os
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -81,6 +78,8 @@ def guessing_letter(word, guess):
         print("Hibás betűk:", ", ".join(sorted(wrong_letters)))
         print(f"Hátralévő próbálkozások: {MAX_TRIES - tries}")
 
+
+        #Milán
         user_guess = input("Tippelj egy betűt vagy a teljes szót: ").lower()
 
         if user_guess in used_letters:
@@ -107,10 +106,14 @@ def guessing_letter(word, guess):
             wrong_letters.add(user_guess)
             tries += 1
 
-    # végeredmény
+    # Végeredmény
     if "".join(guess).lower() == word.lower():
         print("Gratulálok, nyertél!")
     else:
+        if platform.system() == "Windows":
+            os.system("cls")
+        else:
+            os.system("clear")
         print(HANGMAN[MAX_TRIES])
         print("Vesztettél!")
         print("A szó ez volt:", word)
@@ -158,18 +161,18 @@ welcome_text = """
         - Ügyeljünk, hogy ne számot és ne speciális jelet tippeljünk.
         - A hibázási lehetőségek száma: 5.
 
-        A konzol 30 másodperc múlva törlődik.
+        A konzol 10 másodperc múlva törlődik.
 """
 
 print(welcome_text)
 word = ""
 
 # Fél perc várakozás
-for i in range(30, 0, -1):
+for i in range(10, 0, -1):
     print(f"\rTörlés {i} másodperc múlva...", end="")
     time.sleep(1)
 
-# Konzol törlése platformfüggően
+# Konzol törlése OS-től függően
 if platform.system() == "Windows":
     os.system("cls")
 else:
@@ -179,7 +182,10 @@ else:
 while True:
     rnd_while = True   
     guess = []
-    
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
     # Game loop
     while rnd_while:
 
@@ -225,5 +231,3 @@ while True:
     guessing_letter(word, guess)
     
     #Tesztrész
-    print(word)
-    time.sleep(100)
