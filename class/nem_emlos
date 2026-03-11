@@ -1,0 +1,25 @@
+from allat import Allat
+
+class Madar(Allat):
+    def __init__(self, nev, eletkor, elohely, meret):
+        super().__init__(nev, "madár", eletkor, elohely, meret)
+    def __str__(self):
+        return super().__str__()
+    def CsirippCsiripp(self):
+        return f"{self.nev} jelenleg csiripel!"
+
+class Keteltu(Allat):
+    def __init__(self, nev, eletkor, meret):
+        super().__init__(nev, "kétéltű", eletkor, "tópart", meret)
+    def __str__(self):
+        return super().__str__()
+    def Brekeg(self):
+        return f"{self.nev} jelenleg brekeg!"
+
+class Hullo(Allat):
+    def __init__(self, nev, eletkor, meret):
+        super().__init__(nev, "hullo", eletkor, "meleg éghajlat", meret)
+    def __str__(self):
+        return super().__str__()
+    def Napozik(self):
+        return f"{self.nev} jelenleg Napozik!"
